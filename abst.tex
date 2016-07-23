@@ -42,7 +42,7 @@
 {Department of Informatics, Kwansei Gakuin Univ}
 
 \newcommand{\英文氏名}
-{K. Sakakibara, S. R. Nishitani}
+{K. Sakakibara, and S. R. Nishitani}
 
 %% ヘッダ項目、ここまで
 
@@ -187,28 +187,30 @@
 %%%%% 以下の部分に本文を入力してください %%%%%
 
 \paragraph{}
-材料設計において系の有限温度における自由エネルギーの変化は重要である．
+材料設計において系の有限温度における自由エネルギーの変化はもっとも重要な物性値である．
 第一原理計算ソフトVASP(Vienna ab initio simulation package)では，擬調和振動子近似に基づいたphonon計算パッケージが開発されており，自由エネルギーを見積もることができる\cite{phonon}．
-しかし，Ti結晶での相変態温度近傍での振る舞いにおいて理想の結果が得られず，これは非調和の項の影響が大きいからだと思われる．
+しかし，Ti結晶での相変態温度近傍での振る舞いにおいて実験を再現する結果が得られない．これは非調和の項の影響が大きいためと考えられる．
 \paragraph{}
-神藤のMoment法では，有限温度における自由エネルギー，熱膨張などを見積もることができる\cite{jindo}．図1,2はfcc構造の金属であるCu, Ag, Auのシミュレーション結果であり，自由エネルギー，最近接原子間距離が温度に上手く依存していることが確認できる．しかし，ポテンシャルの2次，4次微分を利用するこの計算手法の正当性はわかっておらず検証を行う必要がある．
-また，単純なペアポテンシャルを利用しているがVASPでの計算結果の組み込みが可能か検証を行う．
+Vu Van Hungらが開発したMoment法では，原子間の相互作用エネルギーの高次位置微分を考慮にいれることによって，非調和効果を取り入れた有限温度における自由エネルギー，熱膨張などを見積もることができる\cite{jindo}．
+図1,2は我々が開発したコードを用いて求めた，fcc金属であるCu, Ag, Auの自由エネルギー，最近接原子間距離の温度依存性である．
+本研究では，この計算手法の妥当性を確かめるため，幾つかの金属において，調和振動子近似および実験結果との比較を行う．
+また，経験的な原子間ポテンシャルだけでなく，第一原理計算の組み込みが可能か検討する．
 
 
 
 %\begin{wrapfigure}{r}{8.8cm}
 \begin{center}
-\begin{figure}[h]
+\begin{figure}[b]
 \begin{minipage}{0.5\hsize}
 \begin{center}
-\includegraphics[width=8.8cm]{./energy.eps}
+\includegraphics[width=8cm]{./energy.eps}
 \caption{\small{Cu, Ag, Auにおける自由エネルギーの温度依存性．}}
 \end{center}
 \end{minipage}
 \hspace{5mm}
 \begin{minipage}{0.5\hsize}
 \begin{center}
-\includegraphics[width=8.8cm]{./distance.eps}
+\includegraphics[width=8cm]{./distance.eps}
 \caption{\small{Cu, Ag, Auにおける最近接原子間距離の温度依存性．}}
 \end{center}
 \end{minipage}
